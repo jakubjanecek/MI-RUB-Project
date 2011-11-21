@@ -1,0 +1,143 @@
+.class public Program7
+.super java/lang/Object
+.method public static main([Ljava/lang/String;)V
+.limit stack 100
+.limit locals 100
+ldc2_w 12.67
+dstore 0
+ldc2_w 67.12
+dstore 2
+dload 0
+dload 2
+dcmpg
+ifge Label0
+dload 2
+dload 0
+dsub
+dstore 2
+goto Label1
+Label0:
+dload 0
+dload 2
+dsub
+dstore 0
+Label1:
+getstatic java/lang/System/out Ljava/io/PrintStream;
+dload 0
+invokevirtual java/io/PrintStream/println(D)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+dload 2
+invokevirtual java/io/PrintStream/println(D)V
+dload 0
+dload 2
+dcmpg
+ifle Label2
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 1
+invokevirtual java/io/PrintStream/println(I)V
+dload 0
+ldc2_w 0.5
+dadd
+dstore 0
+goto Label3
+Label2:
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 2
+invokevirtual java/io/PrintStream/println(I)V
+dload 2
+ldc2_w 0.5
+dadd
+dstore 2
+Label3:
+dload 0
+dload 2
+dcmpg
+ifgt Label4
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 3
+invokevirtual java/io/PrintStream/println(I)V
+goto Label5
+Label4:
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 4
+invokevirtual java/io/PrintStream/println(I)V
+Label5:
+dload 0
+dload 2
+dcmpg
+ifne Label6
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 5
+invokevirtual java/io/PrintStream/println(I)V
+Label6:
+dload 0
+dload 2
+dcmpg
+ifeq Label8
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 6
+invokevirtual java/io/PrintStream/println(I)V
+dload 2
+ldc 2
+i2d
+dmul
+dstore 0
+Label8:
+ldc2_w 99.99
+dstore 0
+ldc2_w 888.88
+dstore 2
+dload 0
+dload 2
+dcmpg
+ifle Label10
+dload 0
+ldc2_w 1.22
+dsub
+dstore 0
+goto Label11
+Label10:
+dload 0
+dload 2
+dcmpg
+ifge Label12
+dload 2
+ldc2_w 1.44
+dsub
+dstore 2
+Label12:
+Label11:
+getstatic java/lang/System/out Ljava/io/PrintStream;
+dload 0
+invokevirtual java/io/PrintStream/println(D)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+dload 2
+invokevirtual java/io/PrintStream/println(D)V
+dload 0
+ldc 2
+i2d
+dmul
+dload 2
+ldc 2
+i2d
+dmul
+ldc 1
+i2d
+dadd
+dcmpg
+iflt Label14
+getstatic java/lang/System/out Ljava/io/PrintStream;
+dload 0
+dload 0
+dmul
+invokevirtual java/io/PrintStream/println(D)V
+goto Label15
+Label14:
+getstatic java/lang/System/out Ljava/io/PrintStream;
+dload 2
+dload 0
+ddiv
+invokevirtual java/io/PrintStream/println(D)V
+Label15:
+return
+.end method

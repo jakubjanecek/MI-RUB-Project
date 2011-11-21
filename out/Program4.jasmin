@@ -1,0 +1,33 @@
+.class public Program4
+.super java/lang/Object
+.method public static main([Ljava/lang/String;)V
+.limit stack 100
+.limit locals 100
+ldc2_w 3.14
+dstore 0
+ldc2_w 2.25
+dstore 2
+dload 0
+dload 2
+dmul
+dload 2
+dmul
+dstore 4
+getstatic java/lang/System/out Ljava/io/PrintStream;
+dload 4
+invokevirtual java/io/PrintStream/println(D)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+dload 0
+dload 2
+dmul
+ldc 2
+i2d
+dmul
+invokevirtual java/io/PrintStream/println(D)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+dload 4
+ldc2_w 2.5
+ddiv
+invokevirtual java/io/PrintStream/println(D)V
+return
+.end method

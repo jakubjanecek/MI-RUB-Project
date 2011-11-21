@@ -1,3 +1,2 @@
 require "test/unit"
-require_relative "test_rectangle"
-require_relative "test_calculator"
+require_relative "test_symbol_table"

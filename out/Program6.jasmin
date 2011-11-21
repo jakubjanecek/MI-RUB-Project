@@ -1,0 +1,119 @@
+.class public Program6
+.super java/lang/Object
+.method public static main([Ljava/lang/String;)V
+.limit stack 100
+.limit locals 100
+ldc 154
+istore 0
+ldc 99
+istore 1
+iload 0
+iload 1
+if_icmpge Label0
+iload 1
+iload 0
+isub
+istore 1
+goto Label1
+Label0:
+iload 0
+iload 1
+isub
+istore 0
+Label1:
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 0
+invokevirtual java/io/PrintStream/println(I)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 1
+invokevirtual java/io/PrintStream/println(I)V
+iload 0
+iload 1
+if_icmple Label2
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 1
+invokevirtual java/io/PrintStream/println(I)V
+goto Label3
+Label2:
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 2
+invokevirtual java/io/PrintStream/println(I)V
+Label3:
+iload 0
+iload 1
+if_icmpgt Label4
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 3
+invokevirtual java/io/PrintStream/println(I)V
+goto Label5
+Label4:
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 4
+invokevirtual java/io/PrintStream/println(I)V
+Label5:
+iload 0
+iload 1
+if_icmpne Label6
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 5
+invokevirtual java/io/PrintStream/println(I)V
+Label6:
+iload 0
+iload 1
+if_icmpeq Label8
+getstatic java/lang/System/out Ljava/io/PrintStream;
+ldc 6
+invokevirtual java/io/PrintStream/println(I)V
+Label8:
+ldc 100
+istore 0
+ldc 200
+istore 1
+iload 0
+iload 1
+if_icmple Label10
+iload 0
+ldc 1
+isub
+istore 0
+goto Label11
+Label10:
+iload 0
+iload 1
+if_icmpge Label12
+iload 1
+ldc 1
+isub
+istore 1
+Label12:
+Label11:
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 0
+invokevirtual java/io/PrintStream/println(I)V
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 1
+invokevirtual java/io/PrintStream/println(I)V
+ldc 2
+iload 0
+imul
+ldc 2
+iload 1
+imul
+ldc 1
+iadd
+if_icmplt Label14
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 0
+iload 0
+imul
+invokevirtual java/io/PrintStream/println(I)V
+goto Label15
+Label14:
+getstatic java/lang/System/out Ljava/io/PrintStream;
+iload 1
+iload 1
+imul
+invokevirtual java/io/PrintStream/println(I)V
+Label15:
+return
+.end method
