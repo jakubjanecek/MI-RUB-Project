@@ -2,6 +2,16 @@ require_relative "lexer_symbol"
 
 module PascalParser
 
+  # Implements a lexical analyzer for a subset of Pascal programming language.
+  #
+  # Pascal
+  # * variable declarations, only types integer and real
+  # * mathematical expressions with multiplication, division (and modulo), addition and subtraction
+  # * conditional expressions with equals, not equals, less than, greater than and equals variants
+  # * if-then-else construct
+  # * for cycle with to and downto counters
+  # * while cycle
+  # * writeln command for standard output
   class Lexer
 
     attr_reader :keywords, :lineNumber, :characterPosition
@@ -34,11 +44,14 @@ module PascalParser
       @characterPosition = 0
     end
 
+    # Initializes the lexer.
+    # <b>Needs to be called before Lexer#nextSymbol is called for the first time.</b>
     def open
       @input = File.new(@filename, "r")
       readCharacter
     end
 
+    # Returns the next LexerSymbol from the input.
     def nextSymbol
       skipWhitespace
 
@@ -57,6 +70,8 @@ module PascalParser
       end
     end
 
+    # Closes the lexer.
+    # <b>Needs to be called when finished working with the lexer.</b>
     def close
       @input.close
     end

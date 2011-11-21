@@ -1,0 +1,2014 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: PascalParser::Parser</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/pascalparser/parser_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/pascalparser/parser.rb">lib/pascalparser/parser.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Object</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-i-additiveOperator">#additiveOperator</a></li>
+					
+					<li><a href="#method-i-assignment">#assignment</a></li>
+					
+					<li><a href="#method-i-binaryOperation">#binaryOperation</a></li>
+					
+					<li><a href="#method-i-block">#block</a></li>
+					
+					<li><a href="#method-i-command">#command</a></li>
+					
+					<li><a href="#method-i-commandSequence">#commandSequence</a></li>
+					
+					<li><a href="#method-i-compare">#compare</a></li>
+					
+					<li><a href="#method-i-compoundCommand">#compoundCommand</a></li>
+					
+					<li><a href="#method-i-condition">#condition</a></li>
+					
+					<li><a href="#method-i-decideType">#decideType</a></li>
+					
+					<li><a href="#method-i-declarationOfType">#declarationOfType</a></li>
+					
+					<li><a href="#method-i-elsePart">#elsePart</a></li>
+					
+					<li><a href="#method-i-expression">#expression</a></li>
+					
+					<li><a href="#method-i-factor">#factor</a></li>
+					
+					<li><a href="#method-i-forCommand">#forCommand</a></li>
+					
+					<li><a href="#method-i-forPart">#forPart</a></li>
+					
+					<li><a href="#method-i-ifCommand">#ifCommand</a></li>
+					
+					<li><a href="#method-i-instruction">#instruction</a></li>
+					
+					<li><a href="#method-i-listOfIdentifiers">#listOfIdentifiers</a></li>
+					
+					<li><a href="#method-i-multiplicativeOperator">#multiplicativeOperator</a></li>
+					
+					<li><a href="#method-i-parse">#parse</a></li>
+					
+					<li><a href="#method-i-program">#program</a></li>
+					
+					<li><a href="#method-i-readSymbol">#readSymbol</a></li>
+					
+					<li><a href="#method-i-relationOperator">#relationOperator</a></li>
+					
+					<li><a href="#method-i-restOfCommandSequence">#restOfCommandSequence</a></li>
+					
+					<li><a href="#method-i-restOfExpression">#restOfExpression</a></li>
+					
+					<li><a href="#method-i-restOfListOfIdentifiers">#restOfListOfIdentifiers</a></li>
+					
+					<li><a href="#method-i-restOfTerm">#restOfTerm</a></li>
+					
+					<li><a href="#method-i-restOfVariableDeclarations">#restOfVariableDeclarations</a></li>
+					
+					<li><a href="#method-i-sign">#sign</a></li>
+					
+					<li><a href="#method-i-term">#term</a></li>
+					
+					<li><a href="#method-i-variableDeclaration">#variableDeclaration</a></li>
+					
+					<li><a href="#method-i-variableDeclarations">#variableDeclarations</a></li>
+					
+					<li><a href="#method-i-whileCommand">#whileCommand</a></li>
+					
+					<li><a href="#method-i-writelnCommand">#writelnCommand</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../PascalParser.html">PascalParser</a></li>
+				
+					<li><a href="../PascalParser/LabelGenerator.html">PascalParser::LabelGenerator</a></li>
+				
+					<li><a href="../PascalParser/Lexer.html">PascalParser::Lexer</a></li>
+				
+					<li><a href="../PascalParser/LexerSymbol.html">PascalParser::LexerSymbol</a></li>
+				
+					<li><a href="../PascalParser/Parser.html">PascalParser::Parser</a></li>
+				
+					<li><a href="../PascalParser/ParserSymbol.html">PascalParser::ParserSymbol</a></li>
+				
+					<li><a href="../PascalParser/SymbolTable.html">PascalParser::SymbolTable</a></li>
+				
+					<li><a href="../TestLabelGenerator.html">TestLabelGenerator</a></li>
+				
+					<li><a href="../TestLexer.html">TestLexer</a></li>
+				
+					<li><a href="../TestParser.html">TestParser</a></li>
+				
+					<li><a href="../TestSymbolTable.html">TestSymbolTable</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">PascalParser::Parser</h1>
+
+		<div id="description">
+			<p>
+Implements a syntactical analyzer (parser) for a subset of Pascal
+programming language. It is a top-down recursive descent parser.
+</p>
+<p>
+Pascal
+</p>
+<ul>
+<li><p>
+variable declarations, only types integer and real
+</p>
+</li>
+<li><p>
+mathematical expressions with multiplication, division (and modulo),
+addition and subtraction
+</p>
+</li>
+<li><p>
+conditional expressions with equals, not equals, less than, greater than
+and equals variants
+</p>
+</li>
+<li><p>
+if-then-else construct
+</p>
+</li>
+<li><p>
+for cycle with to and downto counters
+</p>
+</li>
+<li><p>
+while cycle
+</p>
+</li>
+<li><p>
+writeln command for standard output
+</p>
+</li>
+</ul>
+
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="code-attribute-method" class="method-detail">
+				<a name="code"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">code</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(lexer, symbolTable, labelGenerator)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Initializes the parser. It needs to be given fresh instances of lexical
+analyzer, symbol table and label generator.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/pascalparser/parser.rb, line 22</span>
+22:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">lexer</span>, <span class="ruby-identifier">symbolTable</span>, <span class="ruby-identifier">labelGenerator</span>)
+23:       <span class="ruby-ivar">@lexer</span> = <span class="ruby-identifier">lexer</span>
+24:       <span class="ruby-ivar">@symbolTable</span> = <span class="ruby-identifier">symbolTable</span>
+25:       <span class="ruby-ivar">@labelGenerator</span> = <span class="ruby-identifier">labelGenerator</span>
+26:       <span class="ruby-ivar">@code</span> = <span class="ruby-value str">&quot;&quot;</span>
+27:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="parse-method" class="method-detail ">
+				<a name="method-i-parse"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">parse</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Does the parsing. Returns true or false. Program code can be retrieved from
+Parser#code when finished.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="parse-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/pascalparser/parser.rb, line 32</span>
+32:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parse</span>
+33:       <span class="ruby-ivar">@lexer</span>.<span class="ruby-identifier">open</span>
+34: 
+35:       <span class="ruby-identifier">readSymbol</span>
+36: 
+37:       <span class="ruby-keyword kw">begin</span>
+38:         <span class="ruby-comment cmt"># start symbol</span>
+39:         <span class="ruby-identifier">program</span>()
+40:         <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span>
+41:       <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">err</span>
+42:         <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Error at line #{@lexer.lineNumber}, character #{@lexer.characterPosition}:\n\t#{err.to_s}&quot;</span>
+43:         <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span>
+44:       <span class="ruby-keyword kw">ensure</span>
+45:         <span class="ruby-ivar">@lexer</span>.<span class="ruby-identifier">close</span>
+46:       <span class="ruby-keyword kw">end</span>
+47:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="private-instance-method-details" class="method-section section">
+			<h3 class="section-header">Private Instance Methods</h3>
+
+		
+			<div id="additive-perator-method" class="method-detail ">
+				<a name="method-i-additiveOperator"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">additiveOperator</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="additive-perator-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/pascalparser/parser.rb, line 378</span>
+378:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">additiveOperator</span>
+379:       <span class="ruby-keyword kw">case</span> <span class="ruby-ivar">@symbol</span>.<span class="ruby-identifier">kind</span>
+380:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:plus</span>
+381:           <span class="ruby-identifier">readSymbol</span>
+382:           <span class="ruby-keyword kw">return</span> <span class="ruby-value">:plus</span>
+383:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:minus</span>
+384:           <span class="ruby-identifier">readSymbol</span>
+385:           <span class="ruby-keyword kw">return</span> <span class="ruby-value">:minus</span>
+386:         <span class="ruby-keyword kw">else</span>
+387:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exception</span>, <span class="ruby-node">&quot;Expected a additive operator, not #{@symbol}.&quot;</span>
+388:       <span class="ruby-keyword kw">end</span>
+389:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="assignment-method" class="method-detail ">
+				<a name="method-i-assignment"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">assignment</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="assignment-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/pascalparser/parser.rb, line 212</span>
+212:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">assignment</span>()
+213:       <span class="ruby-identifier">identifier</span> = <span class="ruby-identifier">compare</span>(<span class="ruby-value">:ident</span>)
+214:       <span class="ruby-identifier">symbol</span> = <span class="ruby-ivar">@symbolTable</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">identifier</span>.<span class="ruby-identifier">value</span>)
+215:       <span class="ruby-identifier">compare</span>(<span class="ruby-value">:assign</span>)
+216:       <span class="ruby-identifier">expressionType</span> = <span class="ruby-identifier">expression</span>()
+217:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">symbol</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword kw">nil</span>
+218:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">symbol</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">expressionType</span>
+219:           <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">expressionType</span>
+220:             <span class="ruby-keyword kw">when</span> <span class="ruby-value">:integer</span>
+221:               <span class="ruby-identifier">instruction</span>(<span class="ruby-node">&quot;istore #{symbol.address}&quot;</span>)
+222:             <span class="ruby-keyword kw">when</span> <span class="ruby-value">:float</span>
+223:               <span class="ruby-identifier">instruction</span>(<span class="ruby-node">&quot;dstore #{symbol.address}&quot;</span>)
+224:           <span class="ruby-keyword kw">end</span>
+225:         <span class="ruby-keyword kw">else</span>
+226:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exception</span>, <span class="ruby-node">&quot;Different variable type. Expected '#{symbol.type}', not #{expressionType}.&quot;</span>
+227:         <span class="ruby-keyword kw">end</span>
+228:       <span class="ruby-keyword kw">else</span>
+229:         <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exception</span>, <span class="ruby-node">&quot;Variable '#{identifier.value}' was not declared.&quot;</span>
+230:       <span class="ruby-keyword kw">end</span>
+231:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="binary-peration-method" class="method-detail ">
+				<a name="method-i-binaryOperation"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">binaryOperation</span><span
+						class="method-args">(operation, left, right)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="binary-peration-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/pascalparser/parser.rb, line 69</span>
+69:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">binaryOperation</span>(<span class="ruby-identifier">operation</span>, <span class="ruby-identifier">left</span>, <span class="ruby-identifier">right</span>)
+70:       <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">left</span>
+71:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:integer</span>
+72:           <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">right</span>
+73:             <span class="ruby-keyword kw">when</span> <span class="ruby-value">:integer</span>
+74:               <span class="ruby-identifier">instruction</span>(<span class="ruby-node">&quot;i#{operation}&quot;</span>)
+75:             <span class="ruby-keyword kw">when</span> <span class="ruby-value">:float</span>
+76:               <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exception</span>, <span class="ruby-value str">&quot;Cannot convert left operand.&quot;</span>
+77:           <span class="ruby-keyword kw">end</span>
+78:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:float</span>
+79:           <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">right</span>
+80:             <span class="ruby-keyword kw">when</span> <span class="ruby-value">:integer</span>
+81:               <span class="ruby-identifier">instruction</span>(<span class="ruby-value str">&quot;i2d&quot;</span>)
+82:           <span class="ruby-keyword kw">end</span>
+83:           <span class="ruby-identifier">instruction</span>(<span class="ruby-node">&quot;d#{operation}&quot;</span>)
+84:       <span class="ruby-keyword kw">end</span>
+85:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="block-method" class="method-detail ">
+				<a name="method-i-block"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">block</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="block-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/pascalparser/parser.rb, line 113</span>
+113:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">block</span>
+114:       <span class="ruby-keyword kw">case</span> <span class="ruby-ivar">@symbol</span>.<span class="ruby-identifier">kind</span>
+115:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:var</span>, <span class="ruby-value">:begin</span>
+116:           <span class="ruby-identifier">variableDeclarations</span>()
+117:           <span class="ruby-identifier">compoundCommand</span>()
+118:         <span class="ruby-keyword kw">else</span>
+119:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exception</span>, <span class="ruby-value str">&quot;Expected variable declarations or program block.&quot;</span>
+120:       <span class="ruby-keyword kw">end</span>
+121:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="command-method" class="method-detail ">
+				<a name="method-i-command"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">command</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="command-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/pascalparser/parser.rb, line 191</span>
+191:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">command</span>()
+192:       <span class="ruby-keyword kw">case</span> <span class="ruby-ivar">@symbol</span>.<span class="ruby-identifier">kind</span>
+193:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:ident</span>
+194:           <span class="ruby-identifier">assignment</span>()
+195:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:begin</span>
+196:           <span class="ruby-identifier">compoundCommand</span>()
+197:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:if</span>
+198:           <span class="ruby-identifier">ifCommand</span>()
+199:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:while</span>
+200:           <span class="ruby-identifier">whileCommand</span>()
+201:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:for</span>
+202:           <span class="ruby-identifier">forCommand</span>()
+203:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:writeln</span>
+204:           <span class="ruby-identifier">writelnCommand</span>()
+205:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:semi</span>, <span class="ruby-value">:else</span>, <span class="ruby-value">:end</span>
+206:           <span class="ruby-comment cmt"># empty</span>
+207:         <span class="ruby-keyword kw">else</span>
+208:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exception</span>, <span class="ruby-node">&quot;Expected a command, not #{@symbol.kind}.&quot;</span>
+209:       <span class="ruby-keyword kw">end</span>
+210:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="command-equence-method" class="method-detail ">
+				<a name="method-i-commandSequence"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">commandSequence</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="command-equence-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/pascalparser/parser.rb, line 181</span>
+181:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">commandSequence</span>
+182:       <span class="ruby-keyword kw">case</span> <span class="ruby-ivar">@symbol</span>.<span class="ruby-identifier">kind</span>
+183:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:ident</span>, <span class="ruby-value">:begin</span>, <span class="ruby-value">:if</span>, <span class="ruby-value">:while</span>, <span class="ruby-value">:writeln</span>, <span class="ruby-value">:semi</span>, <span class="ruby-value">:end</span>
+184:           <span class="ruby-identifier">command</span>()
+185:           <span class="ruby-identifier">restOfCommandSequence</span>()
+186:         <span class="ruby-keyword kw">else</span>
+187:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exception</span>, <span class="ruby-node">&quot;Expected a sequence of commands, not #{@symbol.kind}.&quot;</span>
+188:       <span class="ruby-keyword kw">end</span>
+189:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="compare-method" class="method-detail ">
+				<a name="method-i-compare"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">compare</span><span
+						class="method-args">(symb)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="compare-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/pascalparser/parser.rb, line 55</span>
+55:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">compare</span>(<span class="ruby-identifier">symb</span>)
+56:       <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@symbol</span>.<span class="ruby-identifier">kind</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">symb</span>
+57:         <span class="ruby-identifier">returnSymbol</span> = <span class="ruby-ivar">@symbol</span>
+58:         <span class="ruby-identifier">readSymbol</span>
+59:         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">returnSymbol</span>
+60:       <span class="ruby-keyword kw">else</span>
+61:         <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exception</span>, <span class="ruby-node">&quot;Expected '#{symb}' but got '#{@symbol.kind}'.&quot;</span>
+62:       <span class="ruby-keyword kw">end</span>
+63:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="compound-ommand-method" class="method-detail ">
+				<a name="method-i-compoundCommand"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">compoundCommand</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="compound-ommand-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/pascalparser/parser.rb, line 175</span>
+175:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">compoundCommand</span>
+176:       <span class="ruby-identifier">compare</span>(<span class="ruby-value">:begin</span>)
+177:       <span class="ruby-identifier">commandSequence</span>()
+178:       <span class="ruby-identifier">compare</span>(<span class="ruby-value">:end</span>)
+179:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="condition-method" class="method-detail ">
+				<a name="method-i-condition"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">condition</span><span
+						class="method-args">(label)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="condition-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/pascalparser/parser.rb, line 410</span>
+410:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">condition</span>(<span class="ruby-identifier">label</span>)
+411:       <span class="ruby-keyword kw">case</span> <span class="ruby-ivar">@symbol</span>.<span class="ruby-identifier">kind</span>
+412:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:plus</span>, <span class="ruby-value">:minus</span>, <span class="ruby-value">:ident</span>, <span class="ruby-value">:integer</span>, <span class="ruby-value">:float</span>, <span class="ruby-value">:lpar</span>
+413:           <span class="ruby-identifier">typeOfLeft</span> = <span class="ruby-identifier">expression</span>()
+414:           <span class="ruby-identifier">operator</span> = <span class="ruby-identifier">relationOperator</span>()
+415:           <span class="ruby-identifier">typeOfRight</span> = <span class="ruby-identifier">expression</span>()
+416: 
+417:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">typeOfLeft</span> <span class="ruby-operator">==</span> <span class="ruby-value">:integer</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">typeOfRight</span> <span class="ruby-operator">==</span> <span class="ruby-value">:float</span>
+418:             <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exception</span>, <span class="ruby-value str">&quot;Cannot convert left operand.&quot;</span>
+419:           <span class="ruby-keyword kw">end</span>
+420: 
+421:           <span class="ruby-identifier">additionalOperations</span> = []
+422:           <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">operator</span>
+423:             <span class="ruby-keyword kw">when</span> <span class="ruby-value">:eq</span>
+424:               <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">typeOfLeft</span> <span class="ruby-operator">==</span> <span class="ruby-value">:integer</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">typeOfRight</span> <span class="ruby-operator">==</span> <span class="ruby-value">:integer</span>
+425:                 <span class="ruby-identifier">operation</span> = <span class="ruby-value str">&quot;if_icmpne&quot;</span>
+426:               <span class="ruby-keyword kw">else</span>
+427:                 <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">typeOfLeft</span> <span class="ruby-operator">==</span> <span class="ruby-value">:float</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">typeOfRight</span> <span class="ruby-operator">==</span> <span class="ruby-value">:float</span>
+428:                   <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">typeOfLeft</span> <span class="ruby-operator">==</span> <span class="ruby-value">:integer</span>
+429:                     <span class="ruby-identifier">additionalOperations</span>.<span class="ruby-identifier">push</span>(<span class="ruby-value str">&quot;i2d&quot;</span>)
+430:                   <span class="ruby-keyword kw">end</span>
+431:                   <span class="ruby-identifier">additionalOperations</span>.<span class="ruby-identifier">push</span>(<span class="ruby-value str">&quot;dcmpg&quot;</span>)
+432:                   <span class="ruby-identifier">operation</span> = <span class="ruby-value str">&quot;ifne&quot;</span>
+433:                 <span class="ruby-keyword kw">end</span>
+434:               <span class="ruby-keyword kw">end</span>
+435:             <span class="ruby-keyword kw">when</span> <span class="ruby-value">:ne</span>
+436:               <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">typeOfLeft</span> <span class="ruby-operator">==</span> <span class="ruby-value">:integer</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">typeOfRight</span> <span class="ruby-operator">==</span> <span class="ruby-value">:integer</span>
+437:                 <span class="ruby-identifier">operation</span> = <span class="ruby-value str">&quot;if_icmpeq&quot;</span>
+438:               <span class="ruby-keyword kw">else</span>
+439:                 <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">typeOfLeft</span> <span class="ruby-operator">==</span> <span class="ruby-value">:float</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">typeOfRight</span> <span class="ruby-operator">==</span> <span class="ruby-value">:float</span>
+440:                   <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">typeOfLeft</span> <span class="ruby-operator">==</span> <span class="ruby-value">:integer</span>
+441:                     <span class="ruby-identifier">additionalOperations</span>.<span class="ruby-identifier">push</span>(<span class="ruby-value str">&quot;i2d&quot;</span>)
+442:                   <span class="ruby-keyword kw">end</span>
+443:                   <span class="ruby-identifier">additionalOperations</span>.<span class="ruby-identifier">push</span>(<span class="ruby-value str">&quot;dcmpg&quot;</span>)
+444:                   <span class="ruby-identifier">operation</span> = <span class="ruby-value str">&quot;ifeq&quot;</span>
+445:                 <span class="ruby-keyword kw">end</span>
+446:               <span class="ruby-keyword kw">end</span>
+447:             <span class="ruby-keyword kw">when</span> <span class="ruby-value">:lt</span>
+448:               <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">typeOfLeft</span> <span class="ruby-operator">==</span> <span class="ruby-value">:integer</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">typeOfRight</span> <span class="ruby-operator">==</span> <span class="ruby-value">:integer</span>
+449:                 <span class="ruby-identifier">operation</span> = <span class="ruby-value str">&quot;if_icmpge&quot;</span>
+450:               <span class="ruby-keyword kw">else</span>
+451:                 <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">typeOfLeft</span> <span class="ruby-operator">==</span> <span class="ruby-value">:float</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">typeOfRight</span> <span class="ruby-operator">==</span> <span class="ruby-value">:float</span>
+452:                   <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">typeOfLeft</span> <span class="ruby-operator">==</span> <span class="ruby-value">:integer</span>
+453:                     <span class="ruby-identifier">additionalOperations</span>.<span class="ruby-identifier">push</span>(<span class="ruby-value str">&quot;i2d&quot;</span>)
+454:                   <span class="ruby-keyword kw">end</span>
+455:                   <span class="ruby-identifier">additionalOperations</span>.<span class="ruby-identifier">push</span>(<span class="ruby-value str">&quot;dcmpg&quot;</span>)
+456:                   <span class="ruby-identifier">operation</span> = <span class="ruby-value str">&quot;ifge&quot;</span>
+457:                 <span class="ruby-keyword kw">end</span>
+458:               <span class="ruby-keyword kw">end</span>
+459: 
+460:             <span class="ruby-keyword kw">when</span> <span class="ruby-value">:gt</span>
+461:               <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">typeOfLeft</span> <span class="ruby-operator">==</span> <span class="ruby-value">:integer</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">typeOfRight</span> <span class="ruby-operator">==</span> <span class="ruby-value">:integer</span>
+462:                 <span class="ruby-identifier">operation</span> = <span class="ruby-value str">&quot;if_icmple&quot;</span>
+463:               <span class="ruby-keyword kw">else</span>
+464:                 <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">typeOfLeft</span> <span class="ruby-operator">==</span> <span class="ruby-value">:float</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">typeOfRight</span> <span class="ruby-operator">==</span> <span class="ruby-value">:float</span>
+465:                   <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">typeOfLeft</span> <span class="ruby-operator">==</span> <span class="ruby-value">:integer</span>
+466:                     <span class="ruby-identifier">additionalOperations</span>.<span class="ruby-identifier">push</span>(<span class="ruby-value str">&quot;i2d&quot;</span>)
+467:                   <span class="ruby-keyword kw">end</span>
+468:                   <span class="ruby-identifier">additionalOperations</span>.<span class="ruby-identifier">push</span>(<span class="ruby-value str">&quot;dcmpg&quot;</span>)
+469:                   <span class="ruby-identifier">operation</span> = <span class="ruby-value str">&quot;ifle&quot;</span>
+470:                 <span class="ruby-keyword kw">end</span>
+471:               <span class="ruby-keyword kw">end</span>
+472:             <span class="ruby-keyword kw">when</span> <span class="ruby-value">:lte</span>
+473:               <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">typeOfLeft</span> <span class="ruby-operator">==</span> <span class="ruby-value">:integer</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">typeOfRight</span> <span class="ruby-operator">==</span> <span class="ruby-value">:integer</span>
+474:                 <span class="ruby-identifier">operation</span> = <span class="ruby-value str">&quot;if_icmpgt&quot;</span>
+475:               <span class="ruby-keyword kw">else</span>
+476:                 <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">typeOfLeft</span> <span class="ruby-operator">==</span> <span class="ruby-value">:float</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">typeOfRight</span> <span class="ruby-operator">==</span> <span class="ruby-value">:float</span>
+477:                   <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">typeOfLeft</span> <span class="ruby-operator">==</span> <span class="ruby-value">:integer</span>
+478:                     <span class="ruby-identifier">additionalOperations</span>.<span class="ruby-identifier">push</span>(<span class="ruby-value str">&quot;i2d&quot;</span>)
+479:                   <span class="ruby-keyword kw">end</span>
+480:                   <span class="ruby-identifier">additionalOperations</span>.<span class="ruby-identifier">push</span>(<span class="ruby-value str">&quot;dcmpg&quot;</span>)
+481:                   <span class="ruby-identifier">operation</span> = <span class="ruby-value str">&quot;ifgt&quot;</span>
+482:                 <span class="ruby-keyword kw">end</span>
+483:               <span class="ruby-keyword kw">end</span>
+484:             <span class="ruby-keyword kw">when</span> <span class="ruby-value">:gte</span>
+485:               <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">typeOfLeft</span> <span class="ruby-operator">==</span> <span class="ruby-value">:integer</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">typeOfRight</span> <span class="ruby-operator">==</span> <span class="ruby-value">:integer</span>
+486:                 <span class="ruby-identifier">operation</span> = <span class="ruby-value str">&quot;if_icmplt&quot;</span>
+487:               <span class="ruby-keyword kw">else</span>
+488:                 <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">typeOfLeft</span> <span class="ruby-operator">==</span> <span class="ruby-value">:float</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">typeOfRight</span> <span class="ruby-operator">==</span> <span class="ruby-value">:float</span>
+489:                   <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">typeOfLeft</span> <span class="ruby-operator">==</span> <span class="ruby-value">:integer</span>
+490:                     <span class="ruby-identifier">additionalOperations</span>.<span class="ruby-identifier">push</span>(<span class="ruby-value str">&quot;i2d&quot;</span>)
+491:                   <span class="ruby-keyword kw">end</span>
+492:                   <span class="ruby-identifier">additionalOperations</span>.<span class="ruby-identifier">push</span>(<span class="ruby-value str">&quot;dcmpg&quot;</span>)
+493:                   <span class="ruby-identifier">operation</span> = <span class="ruby-value str">&quot;iflt&quot;</span>
+494:                 <span class="ruby-keyword kw">end</span>
+495:               <span class="ruby-keyword kw">end</span>
+496:           <span class="ruby-keyword kw">end</span>
+497: 
+498:           <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">additionalOperations</span>.<span class="ruby-identifier">empty?</span>
+499:             <span class="ruby-identifier">additionalOperations</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">op</span><span class="ruby-operator">|</span> <span class="ruby-identifier">instruction</span>(<span class="ruby-node">&quot;#{op}&quot;</span>) }
+500:           <span class="ruby-keyword kw">end</span>
+501:           <span class="ruby-identifier">instruction</span>(<span class="ruby-node">&quot;#{operation} #{label}&quot;</span>)
+502:         <span class="ruby-keyword kw">else</span>
+503:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exception</span>, <span class="ruby-node">&quot;Expected a condition, not #{@symbol}.&quot;</span>
+504:       <span class="ruby-keyword kw">end</span>
+505:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="decide-ype-method" class="method-detail ">
+				<a name="method-i-decideType"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">decideType</span><span
+						class="method-args">(left, right)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="decide-ype-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/pascalparser/parser.rb, line 87</span>
+87:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">decideType</span>(<span class="ruby-identifier">left</span>, <span class="ruby-identifier">right</span>)
+88:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">left</span> <span class="ruby-operator">==</span> <span class="ruby-value">:float</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">right</span> <span class="ruby-operator">==</span> <span class="ruby-value">:float</span>
+89:         <span class="ruby-keyword kw">return</span> <span class="ruby-value">:float</span>
+90:       <span class="ruby-keyword kw">end</span>
+91: 
+92:       <span class="ruby-keyword kw">return</span> <span class="ruby-value">:integer</span>
+93:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="declaration-f-ype-method" class="method-detail ">
+				<a name="method-i-declarationOfType"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">declarationOfType</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="declaration-f-ype-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/pascalparser/parser.rb, line 153</span>
+153:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">declarationOfType</span>
+154:       <span class="ruby-keyword kw">case</span> <span class="ruby-ivar">@symbol</span>.<span class="ruby-identifier">kind</span>
+155:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:integer</span>
+156:           <span class="ruby-ivar">@symbolTable</span>.<span class="ruby-identifier">type</span>(<span class="ruby-ivar">@symbol</span>.<span class="ruby-identifier">kind</span>)
+157:           <span class="ruby-identifier">readSymbol</span>
+158:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:float</span>
+159:           <span class="ruby-ivar">@symbolTable</span>.<span class="ruby-identifier">type</span>(<span class="ruby-ivar">@symbol</span>.<span class="ruby-identifier">kind</span>)
+160:           <span class="ruby-identifier">readSymbol</span>
+161:         <span class="ruby-keyword kw">else</span>
+162:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exception</span>, <span class="ruby-node">&quot;Expected type integer or real, not '#{@symbol}'.&quot;</span>
+163:       <span class="ruby-keyword kw">end</span>
+164:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="else-art-method" class="method-detail ">
+				<a name="method-i-elsePart"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">elsePart</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="else-art-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/pascalparser/parser.rb, line 529</span>
+529:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">elsePart</span>
+530:       <span class="ruby-keyword kw">case</span> <span class="ruby-ivar">@symbol</span>.<span class="ruby-identifier">kind</span>
+531:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:else</span>
+532:           <span class="ruby-identifier">elseLabel</span> = <span class="ruby-ivar">@labelGenerator</span>.<span class="ruby-identifier">getLabel</span>
+533: 
+534:           <span class="ruby-identifier">readSymbol</span>
+535: 
+536:           <span class="ruby-identifier">instruction</span>(<span class="ruby-node">&quot;goto #{elseLabel}&quot;</span>);
+537:           <span class="ruby-identifier">instruction</span>(<span class="ruby-node">&quot;#{@labelGenerator.getPreviousLabel}:&quot;</span>);
+538: 
+539:           <span class="ruby-identifier">command</span>()
+540: 
+541:           <span class="ruby-identifier">instruction</span>(<span class="ruby-node">&quot;#{elseLabel}:&quot;</span>);
+542:         <span class="ruby-keyword kw">else</span>
+543:           <span class="ruby-ivar">@labelGenerator</span>.<span class="ruby-identifier">getLabel</span> <span class="ruby-comment cmt"># useless generation but needed fo the code generator to work</span>
+544:           <span class="ruby-identifier">instruction</span>(<span class="ruby-node">&quot;#{@labelGenerator.getPreviousLabel}:&quot;</span>);
+545:       <span class="ruby-keyword kw">end</span>
+546:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="expression-method" class="method-detail ">
+				<a name="method-i-expression"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">expression</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="expression-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/pascalparser/parser.rb, line 233</span>
+233:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">expression</span>
+234:       <span class="ruby-keyword kw">case</span> <span class="ruby-ivar">@symbol</span>.<span class="ruby-identifier">kind</span>
+235:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:plus</span>, <span class="ruby-value">:minus</span>, <span class="ruby-value">:ident</span>, <span class="ruby-value">:integer</span>, <span class="ruby-value">:float</span>, <span class="ruby-value">:lpar</span>
+236:           <span class="ruby-identifier">sign</span> = <span class="ruby-identifier">sign</span>()
+237:           <span class="ruby-identifier">termType</span> = <span class="ruby-identifier">term</span>()
+238: 
+239:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">sign</span> <span class="ruby-operator">==</span> <span class="ruby-value">:negative</span>
+240:             <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">termType</span>
+241:               <span class="ruby-keyword kw">when</span> <span class="ruby-value">:integer</span>
+242:                 <span class="ruby-identifier">instruction</span>(<span class="ruby-value str">&quot;ineg&quot;</span>)
+243:               <span class="ruby-keyword kw">when</span> <span class="ruby-value">:float</span>
+244:                 <span class="ruby-identifier">instruction</span>(<span class="ruby-value str">&quot;dneg&quot;</span>)
+245:             <span class="ruby-keyword kw">end</span>
+246:           <span class="ruby-keyword kw">end</span>
+247:         <span class="ruby-keyword kw">else</span>
+248:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exception</span>, <span class="ruby-node">&quot;Expected an expression, not #{@symbol}.&quot;</span>
+249:       <span class="ruby-keyword kw">end</span>
+250: 
+251:       <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">restOfExpression</span>(<span class="ruby-identifier">termType</span>)
+252:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="factor-method" class="method-detail ">
+				<a name="method-i-factor"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">factor</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="factor-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/pascalparser/parser.rb, line 275</span>
+275:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">factor</span>()
+276:       <span class="ruby-identifier">returnType</span> = <span class="ruby-keyword kw">nil</span>
+277: 
+278:       <span class="ruby-keyword kw">case</span> <span class="ruby-ivar">@symbol</span>.<span class="ruby-identifier">kind</span>
+279:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:ident</span>
+280:           <span class="ruby-identifier">symb</span> = <span class="ruby-ivar">@symbolTable</span>.<span class="ruby-identifier">find</span>(<span class="ruby-ivar">@symbol</span>.<span class="ruby-identifier">value</span>)
+281:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">symb</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword kw">nil</span>
+282:             <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">symb</span>.<span class="ruby-identifier">type</span>
+283:               <span class="ruby-keyword kw">when</span> <span class="ruby-value">:integer</span>
+284:                 <span class="ruby-identifier">instruction</span>(<span class="ruby-node">&quot;iload #{symb.address}&quot;</span>)
+285:               <span class="ruby-keyword kw">when</span> <span class="ruby-value">:float</span>
+286:                 <span class="ruby-identifier">instruction</span>(<span class="ruby-node">&quot;dload #{symb.address}&quot;</span>)
+287:             <span class="ruby-keyword kw">end</span>
+288: 
+289:             <span class="ruby-identifier">readSymbol</span>
+290:             <span class="ruby-identifier">returnType</span> = <span class="ruby-identifier">symb</span>.<span class="ruby-identifier">type</span>
+291:           <span class="ruby-keyword kw">else</span>
+292:             <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exception</span>, <span class="ruby-node">&quot;Variable '#{@symbol.value}' not declared&quot;</span>
+293:           <span class="ruby-keyword kw">end</span>
+294:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:integer</span>
+295:           <span class="ruby-identifier">symb</span> = <span class="ruby-identifier">compare</span>(<span class="ruby-value">:integer</span>)
+296:           <span class="ruby-identifier">instruction</span>(<span class="ruby-node">&quot;ldc #{symb.value}&quot;</span>)
+297:           <span class="ruby-identifier">returnType</span> = <span class="ruby-value">:integer</span>
+298:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:float</span>
+299:           <span class="ruby-identifier">symb</span> = <span class="ruby-identifier">compare</span>(<span class="ruby-value">:float</span>)
+300:           <span class="ruby-identifier">instruction</span>(<span class="ruby-node">&quot;ldc2_w #{symb.value}&quot;</span>)
+301:           <span class="ruby-identifier">returnType</span> = <span class="ruby-value">:float</span>
+302:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:lpar</span>
+303:           <span class="ruby-identifier">readSymbol</span>
+304:           <span class="ruby-identifier">expressionType</span> = <span class="ruby-identifier">expression</span>()
+305:           <span class="ruby-identifier">compare</span>(<span class="ruby-value">:rpar</span>)
+306: 
+307:           <span class="ruby-identifier">returnType</span> = <span class="ruby-identifier">expressionType</span>
+308:         <span class="ruby-keyword kw">else</span>
+309:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exception</span>, <span class="ruby-node">&quot;Expected a factor, not #{@symbol}.&quot;</span>
+310:       <span class="ruby-keyword kw">end</span>
+311: 
+312:       <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">returnType</span>
+313:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="for-ommand-method" class="method-detail ">
+				<a name="method-i-forCommand"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">forCommand</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="for-ommand-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/pascalparser/parser.rb, line 562</span>
+562:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">forCommand</span>
+563:       <span class="ruby-identifier">compare</span>(<span class="ruby-value">:for</span>)
+564:       <span class="ruby-identifier">identifier</span> = <span class="ruby-identifier">compare</span>(<span class="ruby-value">:ident</span>)
+565:       <span class="ruby-identifier">symbol</span> = <span class="ruby-ivar">@symbolTable</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">identifier</span>.<span class="ruby-identifier">value</span>)
+566:       <span class="ruby-identifier">compare</span>(<span class="ruby-value">:assign</span>)
+567:       <span class="ruby-identifier">expressionType</span> = <span class="ruby-identifier">expression</span>()
+568: 
+569:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">symbol</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword kw">nil</span>
+570:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">symbol</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">expressionType</span>
+571:           <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">expressionType</span> <span class="ruby-operator">==</span> <span class="ruby-value">:integer</span>
+572:             <span class="ruby-identifier">instruction</span>(<span class="ruby-node">&quot;istore #{symbol.address}&quot;</span>)
+573:           <span class="ruby-keyword kw">else</span>
+574:             <span class="ruby-identifier">instruction</span>(<span class="ruby-node">&quot;dstore #{symbol.address}&quot;</span>)
+575:           <span class="ruby-keyword kw">end</span>
+576:         <span class="ruby-keyword kw">else</span>
+577:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exception</span>, <span class="ruby-node">&quot;Different variable type. Expected '#{symbol.type}', not '#{expressionType}'.&quot;</span>
+578:         <span class="ruby-keyword kw">end</span>
+579:       <span class="ruby-keyword kw">else</span>
+580:         <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exception</span>, <span class="ruby-node">&quot;Variable '#{identifier.value}' not declared.&quot;</span>
+581:       <span class="ruby-keyword kw">end</span>
+582: 
+583:       <span class="ruby-identifier">label1</span> = <span class="ruby-ivar">@labelGenerator</span>.<span class="ruby-identifier">getLabel</span>;
+584:       <span class="ruby-identifier">label2</span> = <span class="ruby-ivar">@labelGenerator</span>.<span class="ruby-identifier">getLabel</span>;
+585:       <span class="ruby-identifier">label3</span> = <span class="ruby-ivar">@labelGenerator</span>.<span class="ruby-identifier">getLabel</span>;
+586:       <span class="ruby-identifier">instruction</span>(<span class="ruby-node">&quot;goto #{label1}&quot;</span>);
+587:       <span class="ruby-identifier">instruction</span>(<span class="ruby-node">&quot;#{label2}:&quot;</span>);
+588: 
+589:       <span class="ruby-identifier">direction</span> = <span class="ruby-identifier">forPart</span>()
+590: 
+591:       <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">direction</span>
+592:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:up</span>
+593:           <span class="ruby-identifier">instruction</span>(<span class="ruby-node">&quot;iinc #{symbol.address} 1&quot;</span>);
+594:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:down</span>
+595:           <span class="ruby-identifier">instruction</span>(<span class="ruby-node">&quot;iinc #{symbol.address} -1&quot;</span>);
+596:       <span class="ruby-keyword kw">end</span>
+597: 
+598:       <span class="ruby-identifier">instruction</span>(<span class="ruby-node">&quot;#{label1}:&quot;</span>);
+599:       <span class="ruby-identifier">instruction</span>(<span class="ruby-node">&quot;iload #{symbol.address}&quot;</span>);
+600: 
+601:       <span class="ruby-identifier">expression</span>()
+602: 
+603:       <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">direction</span>
+604:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:up</span>
+605:           <span class="ruby-identifier">instruction</span>(<span class="ruby-node">&quot;if_icmpgt #{label3}&quot;</span>)
+606:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:down</span>
+607:           <span class="ruby-identifier">instruction</span>(<span class="ruby-node">&quot;if_icmplt #{label3}&quot;</span>)
+608:       <span class="ruby-keyword kw">end</span>
+609: 
+610:       <span class="ruby-identifier">compare</span>(<span class="ruby-value">:do</span>)
+611:       <span class="ruby-identifier">command</span>()
+612: 
+613:       <span class="ruby-identifier">instruction</span>(<span class="ruby-node">&quot;goto #{label2}&quot;</span>);
+614:       <span class="ruby-identifier">instruction</span>(<span class="ruby-node">&quot;#{label3}:&quot;</span>);
+615:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="for-art-method" class="method-detail ">
+				<a name="method-i-forPart"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">forPart</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="for-art-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/pascalparser/parser.rb, line 617</span>
+617:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">forPart</span>
+618:       <span class="ruby-keyword kw">case</span> <span class="ruby-ivar">@symbol</span>.<span class="ruby-identifier">kind</span>
+619:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:to</span>
+620:           <span class="ruby-identifier">readSymbol</span>
+621:           <span class="ruby-keyword kw">return</span> <span class="ruby-value">:up</span>
+622:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:downto</span>
+623:           <span class="ruby-identifier">readSymbol</span>
+624:           <span class="ruby-keyword kw">return</span> <span class="ruby-value">:down</span>
+625:         <span class="ruby-keyword kw">else</span>
+626:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exception</span>, <span class="ruby-node">&quot;Expected keyword 'to' or 'downto', not #{@symbol}.&quot;</span>
+627:       <span class="ruby-keyword kw">end</span>
+628:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="if-ommand-method" class="method-detail ">
+				<a name="method-i-ifCommand"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">ifCommand</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="if-ommand-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/pascalparser/parser.rb, line 401</span>
+401:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">ifCommand</span>
+402:       <span class="ruby-identifier">compare</span>(<span class="ruby-value">:if</span>)
+403:       <span class="ruby-identifier">conditionLabel</span> = <span class="ruby-ivar">@labelGenerator</span>.<span class="ruby-identifier">getLabel</span>
+404:       <span class="ruby-identifier">condition</span>(<span class="ruby-identifier">conditionLabel</span>)
+405:       <span class="ruby-identifier">compare</span>(<span class="ruby-value">:then</span>)
+406:       <span class="ruby-identifier">command</span>()
+407:       <span class="ruby-identifier">elsePart</span>()
+408:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="instruction-method" class="method-detail ">
+				<a name="method-i-instruction"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">instruction</span><span
+						class="method-args">(instr)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="instruction-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/pascalparser/parser.rb, line 65</span>
+65:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">instruction</span>(<span class="ruby-identifier">instr</span>)
+66:       <span class="ruby-ivar">@code</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;#{instr}\n&quot;</span>
+67:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="list-f-dentifiers-method" class="method-detail ">
+				<a name="method-i-listOfIdentifiers"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">listOfIdentifiers</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="list-f-dentifiers-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/pascalparser/parser.rb, line 139</span>
+139:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">listOfIdentifiers</span>()
+140:       <span class="ruby-identifier">identifier</span> = <span class="ruby-identifier">compare</span>(<span class="ruby-value">:ident</span>)
+141:       <span class="ruby-ivar">@symbolTable</span>.<span class="ruby-identifier">put</span>(<span class="ruby-identifier">identifier</span>.<span class="ruby-identifier">value</span>, <span class="ruby-identifier">identifier</span>)
+142:       <span class="ruby-identifier">restOfListOfIdentifiers</span>()
+143:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="multiplicative-perator-method" class="method-detail ">
+				<a name="method-i-multiplicativeOperator"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">multiplicativeOperator</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="multiplicative-perator-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/pascalparser/parser.rb, line 340</span>
+340:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">multiplicativeOperator</span>
+341:       <span class="ruby-keyword kw">case</span> <span class="ruby-ivar">@symbol</span>.<span class="ruby-identifier">kind</span>
+342:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:asterisk</span>
+343:           <span class="ruby-identifier">readSymbol</span>
+344:           <span class="ruby-keyword kw">return</span> <span class="ruby-value">:asterisk</span>
+345:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:slash</span>
+346:           <span class="ruby-identifier">readSymbol</span>
+347:           <span class="ruby-keyword kw">return</span> <span class="ruby-value">:slash</span>
+348:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:div</span>
+349:           <span class="ruby-identifier">readSymbol</span>
+350:           <span class="ruby-keyword kw">return</span> <span class="ruby-value">:div</span>
+351:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:mod</span>
+352:           <span class="ruby-identifier">readSymbol</span>
+353:           <span class="ruby-keyword kw">return</span> <span class="ruby-value">:mod</span>
+354:         <span class="ruby-keyword kw">else</span>
+355:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exception</span>, <span class="ruby-node">&quot;Expected a multiplicative operator, not #{@symbol}.&quot;</span>
+356:       <span class="ruby-keyword kw">end</span>
+357:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="program-method" class="method-detail ">
+				<a name="method-i-program"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">program</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="program-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/pascalparser/parser.rb, line 95</span>
+ 95:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">program</span>
+ 96:       <span class="ruby-identifier">compare</span>(<span class="ruby-value">:program</span>)
+ 97:       <span class="ruby-identifier">programName</span> = <span class="ruby-identifier">compare</span>(<span class="ruby-value">:ident</span>)
+ 98:       <span class="ruby-identifier">compare</span>(<span class="ruby-value">:semi</span>)
+ 99: 
+100:       <span class="ruby-identifier">instruction</span>(<span class="ruby-node">&quot;.class public #{programName.value}&quot;</span>);
+101:       <span class="ruby-identifier">instruction</span>(<span class="ruby-value str">&quot;.super java/lang/Object&quot;</span>);
+102:       <span class="ruby-identifier">instruction</span>(<span class="ruby-value str">&quot;.method public static main([Ljava/lang/String;)V&quot;</span>);
+103:       <span class="ruby-identifier">instruction</span>(<span class="ruby-value str">&quot;.limit stack 100&quot;</span>);
+104:       <span class="ruby-identifier">instruction</span>(<span class="ruby-value str">&quot;.limit locals 100&quot;</span>);
+105: 
+106:       <span class="ruby-identifier">block</span>()
+107:       <span class="ruby-identifier">compare</span>(<span class="ruby-value">:period</span>)
+108: 
+109:       <span class="ruby-identifier">instruction</span>(<span class="ruby-value str">&quot;return&quot;</span>);
+110:       <span class="ruby-identifier">instruction</span>(<span class="ruby-value str">&quot;.end method&quot;</span>);
+111:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="read-ymbol-method" class="method-detail ">
+				<a name="method-i-readSymbol"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">readSymbol</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="read-ymbol-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/pascalparser/parser.rb, line 51</span>
+51:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">readSymbol</span>
+52:       <span class="ruby-ivar">@symbol</span> = <span class="ruby-ivar">@lexer</span>.<span class="ruby-identifier">nextSymbol</span>
+53:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="relation-perator-method" class="method-detail ">
+				<a name="method-i-relationOperator"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">relationOperator</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="relation-perator-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/pascalparser/parser.rb, line 507</span>
+507:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">relationOperator</span>
+508:       <span class="ruby-identifier">operator</span> = <span class="ruby-ivar">@symbol</span>.<span class="ruby-identifier">kind</span>
+509:       <span class="ruby-keyword kw">case</span> <span class="ruby-ivar">@symbol</span>.<span class="ruby-identifier">kind</span>
+510:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:eq</span>
+511:           <span class="ruby-identifier">readSymbol</span>
+512:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:ne</span>
+513:           <span class="ruby-identifier">readSymbol</span>
+514:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:lt</span>
+515:           <span class="ruby-identifier">readSymbol</span>
+516:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:gt</span>
+517:           <span class="ruby-identifier">readSymbol</span>
+518:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:lte</span>
+519:           <span class="ruby-identifier">readSymbol</span>
+520:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:gte</span>
+521:           <span class="ruby-identifier">readSymbol</span>
+522:         <span class="ruby-keyword kw">else</span>
+523:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exception</span>, <span class="ruby-node">&quot;Expected a relation operator, not #{@symbol}.&quot;</span>
+524:       <span class="ruby-keyword kw">end</span>
+525: 
+526:       <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">operator</span>
+527:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="rest-f-ommand-equence-method" class="method-detail ">
+				<a name="method-i-restOfCommandSequence"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">restOfCommandSequence</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="rest-f-ommand-equence-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/pascalparser/parser.rb, line 391</span>
+391:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">restOfCommandSequence</span>()
+392:       <span class="ruby-keyword kw">case</span> <span class="ruby-ivar">@symbol</span>.<span class="ruby-identifier">kind</span>
+393:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:semi</span>
+394:           <span class="ruby-identifier">readSymbol</span>
+395:           <span class="ruby-identifier">command</span>()
+396:           <span class="ruby-identifier">restOfCommandSequence</span>()
+397:       <span class="ruby-keyword kw">end</span>
+398:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="rest-f-xpression-method" class="method-detail ">
+				<a name="method-i-restOfExpression"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">restOfExpression</span><span
+						class="method-args">(typeOfLeft)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="rest-f-xpression-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/pascalparser/parser.rb, line 359</span>
+359:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">restOfExpression</span>(<span class="ruby-identifier">typeOfLeft</span>)
+360:       <span class="ruby-keyword kw">case</span> <span class="ruby-ivar">@symbol</span>.<span class="ruby-identifier">kind</span>
+361:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:plus</span>, <span class="ruby-value">:minus</span>
+362:           <span class="ruby-identifier">operator</span> = <span class="ruby-identifier">additiveOperator</span>()
+363:           <span class="ruby-identifier">typeOfRight</span> = <span class="ruby-identifier">term</span>()
+364:           <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">operator</span>
+365:             <span class="ruby-keyword kw">when</span> <span class="ruby-value">:plus</span>
+366:               <span class="ruby-identifier">operation</span> = <span class="ruby-value str">&quot;add&quot;</span>
+367:             <span class="ruby-keyword kw">when</span> <span class="ruby-value">:minus</span>
+368:               <span class="ruby-identifier">operation</span> = <span class="ruby-value str">&quot;sub&quot;</span>
+369:           <span class="ruby-keyword kw">end</span>
+370: 
+371:           <span class="ruby-identifier">binaryOperation</span>(<span class="ruby-identifier">operation</span>, <span class="ruby-identifier">typeOfLeft</span>, <span class="ruby-identifier">typeOfRight</span>)
+372:           <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">restOfExpression</span>(<span class="ruby-identifier">decideType</span>(<span class="ruby-identifier">typeOfLeft</span>, <span class="ruby-identifier">typeOfRight</span>))
+373:         <span class="ruby-keyword kw">else</span>
+374:           <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">typeOfLeft</span>
+375:       <span class="ruby-keyword kw">end</span>
+376:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="rest-f-ist-f-dentifiers-method" class="method-detail ">
+				<a name="method-i-restOfListOfIdentifiers"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">restOfListOfIdentifiers</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="rest-f-ist-f-dentifiers-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/pascalparser/parser.rb, line 145</span>
+145:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">restOfListOfIdentifiers</span>()
+146:       <span class="ruby-keyword kw">case</span> <span class="ruby-ivar">@symbol</span>.<span class="ruby-identifier">kind</span>
+147:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:comma</span>
+148:           <span class="ruby-identifier">readSymbol</span>
+149:           <span class="ruby-identifier">listOfIdentifiers</span>()
+150:       <span class="ruby-keyword kw">end</span>
+151:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="rest-f-erm-method" class="method-detail ">
+				<a name="method-i-restOfTerm"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">restOfTerm</span><span
+						class="method-args">(typeOfLeft)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="rest-f-erm-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/pascalparser/parser.rb, line 315</span>
+315:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">restOfTerm</span>(<span class="ruby-identifier">typeOfLeft</span>)
+316:       <span class="ruby-keyword kw">case</span> <span class="ruby-ivar">@symbol</span>.<span class="ruby-identifier">kind</span>
+317:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:asterisk</span>, <span class="ruby-value">:slash</span>, <span class="ruby-value">:div</span>, <span class="ruby-value">:mod</span>
+318:           <span class="ruby-identifier">operator</span> = <span class="ruby-identifier">multiplicativeOperator</span>()
+319:           <span class="ruby-identifier">typeOfRight</span> = <span class="ruby-identifier">factor</span>()
+320: 
+321:           <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">operator</span>
+322:             <span class="ruby-keyword kw">when</span> <span class="ruby-value">:asterisk</span>
+323:               <span class="ruby-identifier">operation</span> = <span class="ruby-value str">&quot;mul&quot;</span>
+324:             <span class="ruby-keyword kw">when</span> <span class="ruby-value">:slash</span>, <span class="ruby-value">:div</span>
+325:               <span class="ruby-identifier">operation</span> = <span class="ruby-value str">&quot;div&quot;</span>
+326:             <span class="ruby-keyword kw">when</span> <span class="ruby-value">:mod</span>
+327:               <span class="ruby-identifier">operation</span> = <span class="ruby-value str">&quot;rem&quot;</span>
+328:           <span class="ruby-keyword kw">end</span>
+329: 
+330:           <span class="ruby-identifier">binaryOperation</span>(<span class="ruby-identifier">operation</span>, <span class="ruby-identifier">typeOfLeft</span>, <span class="ruby-identifier">typeOfRight</span>)
+331:           <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">restOfTerm</span>(<span class="ruby-identifier">decideType</span>(<span class="ruby-identifier">typeOfLeft</span>, <span class="ruby-identifier">typeOfRight</span>))
+332:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:plus</span>, <span class="ruby-value">:minus</span>, <span class="ruby-value">:eq</span>, <span class="ruby-value">:ne</span>, <span class="ruby-value">:lt</span>, <span class="ruby-value">:gt</span>, <span class="ruby-value">:lte</span>, <span class="ruby-value">:gte</span>, <span class="ruby-value">:semi</span>, <span class="ruby-value">:rpar</span>, <span class="ruby-value">:do</span>, <span class="ruby-value">:if</span>, <span class="ruby-value">:then</span>, <span class="ruby-value">:else</span>, <span class="ruby-value">:to</span>, <span class="ruby-value">:downto</span>, <span class="ruby-value">:writeln</span>, <span class="ruby-value">:for</span>, <span class="ruby-value">:ident</span>
+333:           <span class="ruby-comment cmt"># empty</span>
+334:           <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">typeOfLeft</span>
+335:         <span class="ruby-keyword kw">else</span>
+336:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exception</span>, <span class="ruby-node">&quot;Expected rest of the term, not #{@symbol}.&quot;</span>
+337:       <span class="ruby-keyword kw">end</span>
+338:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="rest-f-ariable-eclarations-method" class="method-detail ">
+				<a name="method-i-restOfVariableDeclarations"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">restOfVariableDeclarations</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="rest-f-ariable-eclarations-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/pascalparser/parser.rb, line 166</span>
+166:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">restOfVariableDeclarations</span>()
+167:       <span class="ruby-keyword kw">case</span> <span class="ruby-ivar">@symbol</span>.<span class="ruby-identifier">kind</span>
+168:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:ident</span>
+169:           <span class="ruby-identifier">variableDeclaration</span>()
+170:           <span class="ruby-identifier">compare</span>(<span class="ruby-value">:semi</span>)
+171:           <span class="ruby-identifier">restOfVariableDeclarations</span>()
+172:       <span class="ruby-keyword kw">end</span>
+173:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="sign-method" class="method-detail ">
+				<a name="method-i-sign"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">sign</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="sign-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/pascalparser/parser.rb, line 254</span>
+254:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sign</span>
+255:       <span class="ruby-keyword kw">case</span> <span class="ruby-ivar">@symbol</span>.<span class="ruby-identifier">kind</span>
+256:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:plus</span>
+257:           <span class="ruby-identifier">readSymbol</span>
+258:           <span class="ruby-keyword kw">return</span> <span class="ruby-value">:positive</span>
+259:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:minus</span>
+260:           <span class="ruby-identifier">readSymbol</span>
+261:           <span class="ruby-keyword kw">return</span> <span class="ruby-value">:negative</span>
+262:       <span class="ruby-keyword kw">end</span>
+263:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="term-method" class="method-detail ">
+				<a name="method-i-term"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">term</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="term-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/pascalparser/parser.rb, line 265</span>
+265:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">term</span>()
+266:       <span class="ruby-keyword kw">case</span> <span class="ruby-ivar">@symbol</span>.<span class="ruby-identifier">kind</span>
+267:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:ident</span>, <span class="ruby-value">:integer</span>, <span class="ruby-value">:float</span>, <span class="ruby-value">:lpar</span>
+268:           <span class="ruby-identifier">factorType</span> = <span class="ruby-identifier">factor</span>()
+269:           <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">restOfTerm</span>(<span class="ruby-identifier">factorType</span>)
+270:         <span class="ruby-keyword kw">else</span>
+271:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exception</span>, <span class="ruby-node">&quot;Expected a term, not #{@symbol}.&quot;</span>
+272:       <span class="ruby-keyword kw">end</span>
+273:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="variable-eclaration-method" class="method-detail ">
+				<a name="method-i-variableDeclaration"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">variableDeclaration</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="variable-eclaration-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/pascalparser/parser.rb, line 133</span>
+133:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">variableDeclaration</span>()
+134:       <span class="ruby-identifier">listOfIdentifiers</span>()
+135:       <span class="ruby-identifier">compare</span>(<span class="ruby-value">:colon</span>)
+136:       <span class="ruby-identifier">declarationOfType</span>()
+137:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="variable-eclarations-method" class="method-detail ">
+				<a name="method-i-variableDeclarations"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">variableDeclarations</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="variable-eclarations-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/pascalparser/parser.rb, line 123</span>
+123:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">variableDeclarations</span>()
+124:       <span class="ruby-keyword kw">case</span> <span class="ruby-ivar">@symbol</span>.<span class="ruby-identifier">kind</span>
+125:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:var</span>
+126:           <span class="ruby-identifier">readSymbol</span>
+127:           <span class="ruby-identifier">variableDeclaration</span>()
+128:           <span class="ruby-identifier">compare</span>(<span class="ruby-value">:semi</span>)
+129:           <span class="ruby-identifier">restOfVariableDeclarations</span>()
+130:       <span class="ruby-keyword kw">end</span>
+131:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="while-ommand-method" class="method-detail ">
+				<a name="method-i-whileCommand"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">whileCommand</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="while-ommand-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/pascalparser/parser.rb, line 548</span>
+548:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">whileCommand</span>
+549:       <span class="ruby-identifier">compare</span>(<span class="ruby-value">:while</span>)
+550: 
+551:       <span class="ruby-identifier">cycleLabel</span> = <span class="ruby-ivar">@labelGenerator</span>.<span class="ruby-identifier">getLabel</span>
+552:       <span class="ruby-identifier">conditionLabel</span> = <span class="ruby-ivar">@labelGenerator</span>.<span class="ruby-identifier">getLabel</span>
+553:       <span class="ruby-identifier">instruction</span>(<span class="ruby-node">&quot;#{cycleLabel}:&quot;</span>)
+554:       <span class="ruby-identifier">condition</span>(<span class="ruby-identifier">conditionLabel</span>)
+555:       <span class="ruby-identifier">compare</span>(<span class="ruby-value">:do</span>)
+556:       <span class="ruby-identifier">command</span>()
+557: 
+558:       <span class="ruby-identifier">instruction</span>(<span class="ruby-node">&quot;goto #{cycleLabel}&quot;</span>)
+559:       <span class="ruby-identifier">instruction</span>(<span class="ruby-node">&quot;#{conditionLabel}:&quot;</span>)
+560:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="writeln-ommand-method" class="method-detail ">
+				<a name="method-i-writelnCommand"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">writelnCommand</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="writeln-ommand-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/pascalparser/parser.rb, line 630</span>
+630:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">writelnCommand</span>
+631:       <span class="ruby-identifier">compare</span>(<span class="ruby-value">:writeln</span>)
+632:       <span class="ruby-identifier">instruction</span>(<span class="ruby-value str">&quot;getstatic java/lang/System/out Ljava/io/PrintStream;&quot;</span>);
+633:       <span class="ruby-identifier">compare</span>(<span class="ruby-value">:lpar</span>)
+634:       <span class="ruby-identifier">expressionType</span> = <span class="ruby-identifier">expression</span>()
+635:       <span class="ruby-identifier">compare</span>(<span class="ruby-value">:rpar</span>)
+636:       <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">expressionType</span>
+637:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:integer</span>
+638:           <span class="ruby-identifier">instruction</span>(<span class="ruby-value str">&quot;invokevirtual java/io/PrintStream/println(I)V&quot;</span>)
+639:         <span class="ruby-keyword kw">when</span> <span class="ruby-value">:float</span>
+640:           <span class="ruby-identifier">instruction</span>(<span class="ruby-value str">&quot;invokevirtual java/io/PrintStream/println(D)V&quot;</span>)
+641:       <span class="ruby-keyword kw">end</span>
+642:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

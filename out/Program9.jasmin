@@ -58,9 +58,9 @@ invokevirtual java/io/PrintStream/println(I)V
 goto Label7
 Label8:
 ldc2_w 0.5
-dstore 12
+dstore 4
 ldc2_w 3.4
-dstore 14
+dstore 6
 iload 1
 ldc 10
 irem
@@ -74,23 +74,23 @@ iload 1
 ldc 10
 idiv
 if_icmpgt Label11
-dload 12
-dload 12
-dload 14
+dload 4
+dload 4
+dload 6
 dmul
 dadd
-dstore 12
-dload 14
+dstore 4
+dload 6
 ldc2_w 0.1
 dadd
-dstore 14
+dstore 6
 goto Label10
 Label11:
 getstatic java/lang/System/out Ljava/io/PrintStream;
-dload 12
+dload 4
 invokevirtual java/io/PrintStream/println(D)V
 getstatic java/lang/System/out Ljava/io/PrintStream;
-dload 14
+dload 6
 invokevirtual java/io/PrintStream/println(D)V
 return
 .end method

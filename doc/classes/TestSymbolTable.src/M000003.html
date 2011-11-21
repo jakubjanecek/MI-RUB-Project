@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>test_type_and_address (TestSymbolTable)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File test/test_symbol_table.rb, line 24</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_type_and_address</span>
+    <span class="ruby-identifier">table</span> = <span class="ruby-constant">PascalParser</span><span class="ruby-operator">::</span><span class="ruby-constant">SymbolTable</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">symbol</span> = <span class="ruby-constant">PascalParser</span><span class="ruby-operator">::</span><span class="ruby-constant">LexerSymbol</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:ident</span>, <span class="ruby-value str">&quot;value&quot;</span>)
+    <span class="ruby-identifier">table</span>.<span class="ruby-identifier">put</span>(<span class="ruby-value str">&quot;id01&quot;</span>, <span class="ruby-identifier">symbol</span>)
+    <span class="ruby-identifier">table</span>.<span class="ruby-identifier">type</span>(<span class="ruby-identifier">:integer</span>)
+    <span class="ruby-identifier">found</span> = <span class="ruby-identifier">table</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value str">&quot;id01&quot;</span>)
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">:integer</span>, <span class="ruby-identifier">found</span>.<span class="ruby-identifier">type</span>)
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">0</span>, <span class="ruby-identifier">found</span>.<span class="ruby-identifier">address</span>)
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;value&quot;</span>, <span class="ruby-identifier">found</span>.<span class="ruby-identifier">identifier</span>)
+
+    <span class="ruby-identifier">symbol</span> = <span class="ruby-constant">PascalParser</span><span class="ruby-operator">::</span><span class="ruby-constant">LexerSymbol</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:ident</span>, <span class="ruby-value str">&quot;value&quot;</span>)
+    <span class="ruby-identifier">table</span>.<span class="ruby-identifier">put</span>(<span class="ruby-value str">&quot;id02&quot;</span>, <span class="ruby-identifier">symbol</span>)
+    <span class="ruby-identifier">table</span>.<span class="ruby-identifier">type</span>(<span class="ruby-identifier">:float</span>)
+    <span class="ruby-identifier">found</span> = <span class="ruby-identifier">table</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value str">&quot;id02&quot;</span>)
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">:float</span>, <span class="ruby-identifier">found</span>.<span class="ruby-identifier">type</span>)
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">1</span>, <span class="ruby-identifier">found</span>.<span class="ruby-identifier">address</span>)
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;value&quot;</span>, <span class="ruby-identifier">found</span>.<span class="ruby-identifier">identifier</span>)
+
+    <span class="ruby-identifier">symbol</span> = <span class="ruby-constant">PascalParser</span><span class="ruby-operator">::</span><span class="ruby-constant">LexerSymbol</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">:ident</span>, <span class="ruby-value str">&quot;value&quot;</span>)
+    <span class="ruby-identifier">table</span>.<span class="ruby-identifier">put</span>(<span class="ruby-value str">&quot;id03&quot;</span>, <span class="ruby-identifier">symbol</span>)
+    <span class="ruby-identifier">table</span>.<span class="ruby-identifier">type</span>(<span class="ruby-identifier">:integer</span>)
+    <span class="ruby-identifier">found</span> = <span class="ruby-identifier">table</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value str">&quot;id03&quot;</span>)
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">3</span>, <span class="ruby-identifier">found</span>.<span class="ruby-identifier">address</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

@@ -8,15 +8,23 @@ if ARGV.length == 2
   symbolTable = PascalParser::SymbolTable.new
   labelGenerator = PascalParser::LabelGenerator.new
   parser = PascalParser::Parser.new(lexer, symbolTable, labelGenerator)
-  code = parser.parse()
+  result = parser.parse()
 
-  output = File.new(ARGV[1], "w")
+  if result
+    puts "Parsing successful."
 
-  begin
-    output.write(code)
-  ensure
-    output.close
+    output = File.new(ARGV[1], "w")
+
+    begin
+      output.write(parser.code)
+    ensure
+      output.close
+    end
+  else
+    puts "Parsing was not successful."
   end
+
+
 else
   puts "USAGE: pascalparser.rb input-filename output-filename"
 end

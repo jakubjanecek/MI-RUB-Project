@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: TestLexer</title>
+
+	<link rel="stylesheet" href="./rdoc.css" type="text/css" media="screen" />
+
+	<script src="./js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="./test/test_lexer_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="test/test_lexer.rb">test/test_lexer.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Test::Unit::TestCase</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-i-test_lexer">#test_lexer</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="./images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="./PascalParser.html">PascalParser</a></li>
+				
+					<li><a href="./PascalParser/LabelGenerator.html">PascalParser::LabelGenerator</a></li>
+				
+					<li><a href="./PascalParser/Lexer.html">PascalParser::Lexer</a></li>
+				
+					<li><a href="./PascalParser/LexerSymbol.html">PascalParser::LexerSymbol</a></li>
+				
+					<li><a href="./PascalParser/Parser.html">PascalParser::Parser</a></li>
+				
+					<li><a href="./PascalParser/ParserSymbol.html">PascalParser::ParserSymbol</a></li>
+				
+					<li><a href="./PascalParser/SymbolTable.html">PascalParser::SymbolTable</a></li>
+				
+					<li><a href="./TestLabelGenerator.html">TestLabelGenerator</a></li>
+				
+					<li><a href="./TestLexer.html">TestLexer</a></li>
+				
+					<li><a href="./TestParser.html">TestParser</a></li>
+				
+					<li><a href="./TestSymbolTable.html">TestSymbolTable</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">TestLexer</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="test-lexer-method" class="method-detail ">
+				<a name="method-i-test_lexer"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_lexer</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="test-lexer-source">
+<pre>
+    <span class="ruby-comment cmt"># File test/test_lexer.rb, line 6</span>
+ 6:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_lexer</span>
+ 7:     <span class="ruby-identifier">lexer</span> = <span class="ruby-constant">PascalParser</span><span class="ruby-operator">::</span><span class="ruby-constant">Lexer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">&quot;Program1.pas&quot;</span>)
+ 8: 
+ 9:     <span class="ruby-identifier">lexer</span>.<span class="ruby-identifier">open</span>
+10: 
+11:     <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">:program</span>, <span class="ruby-identifier">lexer</span>.<span class="ruby-identifier">nextSymbol</span>.<span class="ruby-identifier">kind</span>)
+12: 
+13:     <span class="ruby-identifier">s</span> = <span class="ruby-identifier">lexer</span>.<span class="ruby-identifier">nextSymbol</span>
+14:     <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">:ident</span>, <span class="ruby-identifier">s</span>.<span class="ruby-identifier">kind</span>)
+15:     <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value str">&quot;Program1&quot;</span>, <span class="ruby-identifier">s</span>.<span class="ruby-identifier">value</span>)
+16: 
+17:     <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">:semi</span>, <span class="ruby-identifier">lexer</span>.<span class="ruby-identifier">nextSymbol</span>.<span class="ruby-identifier">kind</span>)
+18:     <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">:begin</span>, <span class="ruby-identifier">lexer</span>.<span class="ruby-identifier">nextSymbol</span>.<span class="ruby-identifier">kind</span>)
+19:     <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">:writeln</span>, <span class="ruby-identifier">lexer</span>.<span class="ruby-identifier">nextSymbol</span>.<span class="ruby-identifier">kind</span>)
+20:     <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">:lpar</span>, <span class="ruby-identifier">lexer</span>.<span class="ruby-identifier">nextSymbol</span>.<span class="ruby-identifier">kind</span>)
+21: 
+22:     <span class="ruby-identifier">s</span> = <span class="ruby-identifier">lexer</span>.<span class="ruby-identifier">nextSymbol</span>
+23:     <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">:integer</span>, <span class="ruby-identifier">s</span>.<span class="ruby-identifier">kind</span>)
+24:     <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">42</span>, <span class="ruby-identifier">s</span>.<span class="ruby-identifier">value</span>)
+25: 
+26:     <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">:rpar</span>, <span class="ruby-identifier">lexer</span>.<span class="ruby-identifier">nextSymbol</span>.<span class="ruby-identifier">kind</span>)
+27:     <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">:semi</span>, <span class="ruby-identifier">lexer</span>.<span class="ruby-identifier">nextSymbol</span>.<span class="ruby-identifier">kind</span>)
+28:     <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">:end</span>, <span class="ruby-identifier">lexer</span>.<span class="ruby-identifier">nextSymbol</span>.<span class="ruby-identifier">kind</span>)
+29: 
+30:     <span class="ruby-identifier">lexer</span>.<span class="ruby-identifier">close</span>
+31:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

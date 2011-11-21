@@ -2,8 +2,23 @@ require_relative "symbol_table"
 
 module PascalParser
 
+  # Implements a syntactical analyzer (parser) for a subset of Pascal programming language.
+  # It is a top-down recursive descent parser.
+  #
+  # Pascal
+  # * variable declarations, only types integer and real
+  # * mathematical expressions with multiplication, division (and modulo), addition and subtraction
+  # * conditional expressions with equals, not equals, less than, greater than and equals variants
+  # * if-then-else construct
+  # * for cycle with to and downto counters
+  # * while cycle
+  # * writeln command for standard output
   class Parser
 
+    attr_reader :code
+
+    # Initializes the parser.
+    # It needs to be given fresh instances of lexical analyzer, symbol table and label generator.
     def initialize(lexer, symbolTable, labelGenerator)
       @lexer = lexer
       @symbolTable = symbolTable
@@ -11,6 +26,9 @@ module PascalParser
       @code = ""
     end
 
+    # Does the parsing.
+    # Returns true or false.
+    # Program code can be retrieved from Parser#code when finished.
     def parse
       @lexer.open
 
@@ -19,9 +37,10 @@ module PascalParser
       begin
         # start symbol
         program()
+        return true
       rescue Exception => err
         puts "Error at line #{@lexer.lineNumber}, character #{@lexer.characterPosition}:\n\t#{err.to_s}"
-        raise err
+        return false
       ensure
         @lexer.close
       end
@@ -625,4 +644,3 @@ module PascalParser
   end
 
 end
-

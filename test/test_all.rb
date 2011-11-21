@@ -1,2 +1,5 @@
 require "test/unit"
 require_relative "test_symbol_table"
+require_relative "test_label_generator"
+require_relative "test_lexer"
+require_relative "test_parser"

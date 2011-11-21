@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: TestParser</title>
+
+	<link rel="stylesheet" href="./rdoc.css" type="text/css" media="screen" />
+
+	<script src="./js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="./test/test_parser_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="test/test_parser.rb">test/test_parser.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Test::Unit::TestCase</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-i-test_parser1">#test_parser1</a></li>
+					
+					<li><a href="#method-i-test_parser2">#test_parser2</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="./images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="./PascalParser.html">PascalParser</a></li>
+				
+					<li><a href="./PascalParser/LabelGenerator.html">PascalParser::LabelGenerator</a></li>
+				
+					<li><a href="./PascalParser/Lexer.html">PascalParser::Lexer</a></li>
+				
+					<li><a href="./PascalParser/LexerSymbol.html">PascalParser::LexerSymbol</a></li>
+				
+					<li><a href="./PascalParser/Parser.html">PascalParser::Parser</a></li>
+				
+					<li><a href="./PascalParser/ParserSymbol.html">PascalParser::ParserSymbol</a></li>
+				
+					<li><a href="./PascalParser/SymbolTable.html">PascalParser::SymbolTable</a></li>
+				
+					<li><a href="./TestLabelGenerator.html">TestLabelGenerator</a></li>
+				
+					<li><a href="./TestLexer.html">TestLexer</a></li>
+				
+					<li><a href="./TestParser.html">TestParser</a></li>
+				
+					<li><a href="./TestSymbolTable.html">TestSymbolTable</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">TestParser</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="test-parser--method" class="method-detail ">
+				<a name="method-i-test_parser1"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_parser1</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="test-parser--source">
+<pre>
+    <span class="ruby-comment cmt"># File test/test_parser.rb, line 9</span>
+ 9:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_parser1</span>
+10:     <span class="ruby-identifier">lexer</span> = <span class="ruby-constant">PascalParser</span><span class="ruby-operator">::</span><span class="ruby-constant">Lexer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">&quot;Program1.pas&quot;</span>)
+11:     <span class="ruby-identifier">parser</span> = <span class="ruby-constant">PascalParser</span><span class="ruby-operator">::</span><span class="ruby-constant">Parser</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">lexer</span>, <span class="ruby-constant">PascalParser</span><span class="ruby-operator">::</span><span class="ruby-constant">SymbolTable</span>.<span class="ruby-identifier">new</span>, <span class="ruby-constant">PascalParser</span><span class="ruby-operator">::</span><span class="ruby-constant">LabelGenerator</span>.<span class="ruby-identifier">new</span>)
+12: 
+13:     <span class="ruby-identifier">result</span> = <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">parse</span>
+14:     <span class="ruby-identifier">assert_equal</span>(<span class="ruby-keyword kw">true</span>, <span class="ruby-identifier">result</span>)
+15: 
+16:     <span class="ruby-identifier">code</span> = <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">code</span>
+17:     <span class="ruby-identifier">expected</span> = <span class="ruby-value str">.class public Program1.super java/lang/Object.method public static main([Ljava/lang/String;)V.limit stack 100.limit locals 100getstatic java/lang/System/out Ljava/io/PrintStream;ldc 42invokevirtual java/io/PrintStream/println(I)Vreturn.end method</span>
+18:     <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">expected</span>, <span class="ruby-identifier">code</span>)
+19:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="test-parser--method" class="method-detail ">
+				<a name="method-i-test_parser2"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_parser2</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="test-parser--source">
+<pre>
+    <span class="ruby-comment cmt"># File test/test_parser.rb, line 32</span>
+32:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_parser2</span>
+33:     <span class="ruby-identifier">lexer</span> = <span class="ruby-constant">PascalParser</span><span class="ruby-operator">::</span><span class="ruby-constant">Lexer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">&quot;Program9.pas&quot;</span>)
+34:     <span class="ruby-identifier">parser</span> = <span class="ruby-constant">PascalParser</span><span class="ruby-operator">::</span><span class="ruby-constant">Parser</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">lexer</span>, <span class="ruby-constant">PascalParser</span><span class="ruby-operator">::</span><span class="ruby-constant">SymbolTable</span>.<span class="ruby-identifier">new</span>, <span class="ruby-constant">PascalParser</span><span class="ruby-operator">::</span><span class="ruby-constant">LabelGenerator</span>.<span class="ruby-identifier">new</span>)
+35: 
+36:     <span class="ruby-identifier">result</span> = <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">parse</span>
+37:     <span class="ruby-identifier">assert_equal</span>(<span class="ruby-keyword kw">true</span>, <span class="ruby-identifier">result</span>)
+38: 
+39:     <span class="ruby-identifier">code</span> = <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">code</span>
+40:     <span class="ruby-identifier">expected</span> = <span class="ruby-value str">.class public Program9.super java/lang/Object.method public static main([Ljava/lang/String;)V.limit stack 100.limit locals 100ldc 1istore 1ldc 1istore 0goto Label0Label1:iinc 0 1Label0:iload 0ldc 5if_icmpgt Label2iload 1ldc 3imulistore 1goto Label1Label2:getstatic java/lang/System/out Ljava/io/PrintStream;iload 1invokevirtual java/io/PrintStream/println(I)Vldc 1istore 2ldc 5istore 0goto Label3Label4:iinc 0 -1Label3:iload 0ldc 1if_icmplt Label5iload 2ldc 3imulistore 2goto Label4Label5:getstatic java/lang/System/out Ljava/io/PrintStream;iload 2invokevirtual java/io/PrintStream/println(I)Viload 1istore 0goto Label6Label7:iinc 0 1Label6:iload 0iload 2if_icmpgt Label8getstatic java/lang/System/out Ljava/io/PrintStream;ldc 99invokevirtual java/io/PrintStream/println(I)Vgoto Label7Label8:ldc2_w 0.5dstore 4ldc2_w 3.4dstore 6iload 1ldc 10iremistore 0goto Label9Label10:iinc 0 1Label9:iload 0iload 1ldc 10idivif_icmpgt Label11dload 4dload 4dload 6dmuldadddstore 4dload 6ldc2_w 0.1dadddstore 6goto Label10Label11:getstatic java/lang/System/out Ljava/io/PrintStream;dload 4invokevirtual java/io/PrintStream/println(D)Vgetstatic java/lang/System/out Ljava/io/PrintStream;dload 6invokevirtual java/io/PrintStream/println(D)Vreturn.end method</span>
+41:     <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">expected</span>, <span class="ruby-identifier">code</span>)
+42:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

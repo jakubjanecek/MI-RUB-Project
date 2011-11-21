@@ -55,39 +55,39 @@ getstatic java/lang/System/out Ljava/io/PrintStream;
 iload 2
 invokevirtual java/io/PrintStream/println(I)V
 ldc2_w 5.6
-dstore 9
+dstore 3
 ldc2_w 78.2
-dstore 11
+dstore 5
 Label6:
-dload 9
-dload 11
+dload 3
+dload 5
 dcmpg
 ifge Label7
-dload 9
-dload 9
+dload 3
+dload 3
 ldc 2
 i2d
 ddiv
 dadd
-dload 9
+dload 3
 ldc 3
 i2d
 ddiv
 dsub
-dstore 9
-dload 11
-dload 11
+dstore 3
+dload 5
+dload 5
 ldc2_w 0.30000000000000004
 dmul
 dsub
-dstore 11
+dstore 5
 goto Label6
 Label7:
 getstatic java/lang/System/out Ljava/io/PrintStream;
-dload 9
+dload 3
 invokevirtual java/io/PrintStream/println(D)V
 getstatic java/lang/System/out Ljava/io/PrintStream;
-dload 11
+dload 5
 invokevirtual java/io/PrintStream/println(D)V
 return
 .end method

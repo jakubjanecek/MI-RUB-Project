@@ -59,46 +59,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="synan.cpp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../../../FEL/03 semestr/X36PJP/semestralka/_final/synan.cpp">
+      <file leaf-file-name="pascalparser.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bin/pascalparser.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="786" column="8" selection-start="19559" selection-end="19559" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="parser.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/pascalparser/parser.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="523" column="96" selection-start="13542" selection-end="13542" vertical-scroll-proportion="-11.807693">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="label_generator.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/pascalparser/label_generator.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="0" selection-start="91" selection-end="91" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_all.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/test_all.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_symbol_table.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/test_symbol_table.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="13" column="28" selection-start="499" selection-end="499" vertical-scroll-proportion="0.23609534">
               <folding />
             </state>
           </provider>
@@ -114,22 +78,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/lib/pascalparser/ast/variable_declarations.rb" />
-        <option value="$PROJECT_DIR$/lib/pascalparser/ast/command_sequence.rb" />
-        <option value="$PROJECT_DIR$/lib/pascalparser/ast/assignment.rb" />
-        <option value="$PROJECT_DIR$/lib/pascalparser/code_generator/generator.rb" />
-        <option value="$PROJECT_DIR$/lib/pascalparser/ast/expression.rb" />
-        <option value="$PROJECT_DIR$/lib/pascalparser/ast/expression_negation.rb" />
-        <option value="$PROJECT_DIR$/lib/pascalparser/parser_symbol.rb" />
-        <option value="$PROJECT_DIR$/lib/pascalparser/symbol_table.rb" />
-        <option value="$PROJECT_DIR$/../../../../FEL/03 semestr/X36PJP/semestralka/_final/synan.cpp" />
-        <option value="$PROJECT_DIR$/bin/pascalparser.rb" />
-        <option value="$PROJECT_DIR$/test/Program2.pas" />
         <option value="$PROJECT_DIR$/test/Program4.pas" />
         <option value="$PROJECT_DIR$/test/Program5.pas" />
         <option value="$PROJECT_DIR$/test/Program6.pas" />
+        <option value="$PROJECT_DIR$/test/test_symbol_table.rb" />
         <option value="$PROJECT_DIR$/lib/pascalparser/label_generator.rb" />
+        <option value="$PROJECT_DIR$/test/test_label_generator.rb" />
+        <option value="$PROJECT_DIR$/lib/pascalparser/parser_symbol.rb" />
+        <option value="$PROJECT_DIR$/lib/pascalparser/lexer_symbol.rb" />
+        <option value="$PROJECT_DIR$/lib/pascalparser/lexer.rb" />
+        <option value="$PROJECT_DIR$/test/test_lexer.rb" />
+        <option value="$PROJECT_DIR$/bin/pascalparser.rb" />
         <option value="$PROJECT_DIR$/lib/pascalparser/parser.rb" />
+        <option value="$PROJECT_DIR$/test/test_all.rb" />
+        <option value="$PROJECT_DIR$/test/test_parser.rb" />
+        <option value="$PROJECT_DIR$/lib/pascalparser/symbol_table.rb" />
+        <option value="$PROJECT_DIR$/run.sh" />
       </list>
     </option>
   </component>
@@ -208,6 +172,20 @@
               <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="pascalparser" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -221,12 +199,15 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="project.structure.proportion" value="0.0" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="reference.settings.ide.settings.notifications" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../FEL/03 semestr/X36PJP/semestralka/_final" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="DefaultHtmlFileTemplate" value="Html" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -277,12 +258,13 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test" />
       <recent name="$PROJECT_DIR$/lib/pascalparser/ast" />
       <recent name="$PROJECT_DIR$/lib/pascalparser" />
       <recent name="$PROJECT_DIR$/bin" />
     </key>
   </component>
-  <component name="RunManager" selected="Ruby.pascalparser.rb">
+  <component name="RunManager" selected="Ruby.test_all">
     <configuration default="true" type="RSpecRunConfigurationType" factoryName="RSpec">
       <predefined_log_file id="RUBY_RSPEC" enabled="true" />
       <module name="" />
@@ -518,7 +500,7 @@
         </COVERAGE_PATTERN>
       </EXTENSION>
       <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$PROJECT_DIR$/bin/pascalparser.rb" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="./test/Program7.pas ./out/Program7.jasmin" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="./test/Program1.pas ./out/Program1.jasmin" />
       <RunnerSettings RunnerId="RubyDebugRunner" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="RubyDebugRunner" />
@@ -528,7 +510,7 @@
     <configuration default="false" name="test_all" type="RubyRunConfigurationType" factoryName="Ruby">
       <module name="Project" />
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
-      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$PROJECT_DIR$/test" />
       <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
       <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
       <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
@@ -541,7 +523,9 @@
       </EXTENSION>
       <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$PROJECT_DIR$/test/test_all.rb" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <RunnerSettings RunnerId="RubyDebugRunner" />
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="RubyDebugRunner" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -585,7 +569,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="68" y="22" width="1612" height="1028" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -599,9 +583,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2284069" sideWeight="0.6703297" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2284069" sideWeight="0.6" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32967034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32893288" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -656,16 +640,23 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/pascalparser/symbol_table.rb">
+    <entry file="file://$PROJECT_DIR$/lib/pascalparser/parser_symbol.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="38" selection-start="980" selection-end="980" vertical-scroll-proportion="1.0">
+        <state line="7" column="0" selection-start="182" selection-end="182" vertical-scroll-proportion="0.19277108">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/pascalparser.rb">
+    <entry file="file://$PROJECT_DIR$/lib/pascalparser/lexer_symbol.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="51" selection-start="359" selection-end="359" vertical-scroll-proportion="0.22030981">
+        <state line="2" column="71" selection-start="92" selection-end="92" vertical-scroll-proportion="0.055077452">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pascalparser/label_generator.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="47" selection-start="334" selection-end="334" vertical-scroll-proportion="0.4130809">
           <folding />
         </state>
       </provider>
@@ -679,88 +670,176 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/Program2.pas">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="4" selection-start="38" selection-end="38" vertical-scroll-proportion="0.055077452">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/Program3.pas">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="9" selection-start="80" selection-end="80" vertical-scroll-proportion="0.16523236">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pascalparser/lexer.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-4.516351">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/Program4.pas">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="18" selection-start="153" selection-end="153" vertical-scroll-proportion="0.22030981">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/Program5.pas">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="9" selection-start="67" selection-end="67" vertical-scroll-proportion="0.08261618">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/Program7.pas">
-      <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../FEL/03 semestr/X36PJP/semestralka/_final/synan.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="786" column="8" selection-start="19559" selection-end="19559" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pascalparser/parser.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="523" column="96" selection-start="13542" selection-end="13542" vertical-scroll-proportion="-11.807693">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/Program6.pas">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="26" selection-start="269" selection-end="269" vertical-scroll-proportion="0.302926">
+        <state line="11" column="26" selection-start="269" selection-end="269" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pascalparser/label_generator.rb">
+    <entry file="file://$PROJECT_DIR$/test/Program4.pas">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="91" selection-end="91" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test_lexer.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="19" selection-start="612" selection-end="612" vertical-scroll-proportion="0.6333907">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/test_all.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="4" column="29" selection-start="156" selection-end="156" vertical-scroll-proportion="0.110154904">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/test_symbol_table.rb">
+    <entry file="file://$PROJECT_DIR$/lib/pascalparser/symbol_table.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="52" column="10" selection-start="1435" selection-end="1435" vertical-scroll-proportion="0.6695353">
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pascalparser/parser.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="46" selection-start="192" selection-end="192" vertical-scroll-proportion="0.13769363">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pascalparser/lexer.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="41" selection-start="56" selection-end="536" vertical-scroll-proportion="0.35800344">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="30" selection-start="1659" selection-end="1659" vertical-scroll-proportion="0.8365494">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test_parser.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="134" column="6" selection-start="2450" selection-end="2450" vertical-scroll-proportion="2.4335983">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/pascalparser.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="28" selection-start="499" selection-end="499" vertical-scroll-proportion="0.23609534">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Bean Validation</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>archive-tar-minitar (v0.5.2, RVM: ruby-1.9.2-p290) [gem]</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>RVM: ruby-1.9.2-p290</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Project</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
 

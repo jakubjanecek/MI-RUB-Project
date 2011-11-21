@@ -1,5 +1,6 @@
 module PascalParser
 
+  # Represents a parser symbol with attributes identifier, type and address.
   class ParserSymbol
 
     attr_reader :identifier

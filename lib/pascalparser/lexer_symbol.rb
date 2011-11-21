@@ -1,5 +1,6 @@
 module PascalParser
 
+  # Represents a lexical symbol with attributes kind (kind of character) and value (character).
   class LexerSymbol
 
     attr_reader :kind, :value
